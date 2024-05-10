@@ -6,8 +6,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name:TP04 Java CI with Maven 
-
+name: TP04 Java CI with Maven 
 on:
   push:
     branches: [ "main" ]
