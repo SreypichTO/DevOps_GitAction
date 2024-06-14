@@ -1,12 +1,23 @@
 <?php
-use App\Models\Student;
-use function PHPUnit\Framework\assertTrue;
-test('create student', function () {
-    $student = Student::create([
-        'name' => 'John Doe',
-        'email' => '<your_name>@itc.edu.kh',
-        'phone' => '012 345 678',
-        'dob' => '2003-10-01'
-    ]);
-    assertTrue($student->exists());
-});
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Student extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'email',
+        'phone',
+        'dob',
+        'device_id',
+    ];
+
+    protected $dates = [
+        'dob', // Cast 'dob' attribute to a date
+    ];
+}
